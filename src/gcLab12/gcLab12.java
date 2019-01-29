@@ -13,7 +13,7 @@ public class gcLab12 {
 		System.out.println("Welcome to CarTracker!");
 		userCars = Validator.getInt(scnr, "How many cars would you like to add?");
 
-		for (int i = 0; i < userCars; i++) {
+		for (int i = 0; i < userCars; i++) { //keeps asking for info until number of cars the user requested has been reached
 			userCarList.add(getCar());
 		}
 		System.out.println("Current inventory:");
@@ -24,13 +24,13 @@ public class gcLab12 {
 		scnr.close();
 	}
 
-	public static Car getCar() {
+	public static Car getCar() { // asks user for information on cars
 		Scanner scnr = new Scanner(System.in);
 		Car myCar = new Car();
 		myCar.setMake(Validator.getString(scnr, "Please enter the make of the car:"));
 		myCar.setModel(Validator.getString(scnr, "Please enter the model of the car:"));
-		myCar.setYear(Validator.getInt(scnr, "Please enter the year of the car:", 1885, 2021));
-		myCar.setPrice(Validator.getDouble(scnr, "Please enter the price of the car:", 1.00, 1000000000.00));
+		myCar.setYear(Validator.getInt(scnr, "Please enter the year of the car:", 1885, 2021)); //first car was in 1885
+		myCar.setPrice(Validator.getDouble(scnr, "Please enter the price of the car:", 1.00, 1000000000.00)); // don't wanna give cars away
 		return myCar;
 	}
 }
